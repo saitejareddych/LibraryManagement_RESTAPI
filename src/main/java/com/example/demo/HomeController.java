@@ -20,10 +20,13 @@ public class HomeController {
 	@CrossOrigin
 	public void submitBook(@RequestBody Books books) {
 		String a=books.getBook_Name();
-		
-		System.out.println("Test");
-		System.out.println(a);
-		
+		repo.save(books);
+		System.out.println("Inside Post");
+	}
+	@RequestMapping(value="/remove", method=RequestMethod.DELETE)
+	public void removeBook(@RequestParam int book_id){
+		System.out.println("inside Delete"+book_id);
+		repo.deleteById(book_id);
 	}
 
 }

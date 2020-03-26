@@ -46,7 +46,7 @@ public class HomeController {
 	public String test() throws JsonProcessingException {
 		List<Books> result= (List<Books>) repo.findAll();
 		ObjectMapper mapper = new ObjectMapper();
-		return mapper.writeValueAsString(result);
+		return mapper.writeValueAsString(result) ;
 	}
 
 }

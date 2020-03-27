@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface Repo extends CrudRepository<Books, Integer> {
 
+    @Query()
     public void findByCount();
 
 }
